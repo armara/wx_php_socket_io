@@ -1,0 +1,87 @@
+IP: 194.135.81.127	index.php
+
+
+phpmyadmin
+IP: http://194.135.81.127/phpmyadmin/
+Log: root
+Pas: AH0545139
+
+DB-connection is the same as nver.am	public_html/android_test/include/Config.php
+define("DB_HOST", "localhost");
+define("DB_USER", "nveram_gameuser");
+define("DB_PASSWORD", "kEx~lNm,Haw0");
+define("DB_DATABASE", "nveram_game");
+
+
+FTP-connection
+User: ftpman
+pass: 7DllneAhCoVE
+
+
+SSH-connection
+User: root
+Pass: 7DllneAhCoVE
+
+root-folder is www/
+all php-files are into "android_test"
+
+
+node-server is into "node"-folder
+run server.js as you know, by SSH
+and open page http://194.135.81.127:55263/
+(port is the same as unocoding.com on webrahost.com)
+
+http://194.135.81.127:55263/
+
+-------------------------------------------------
+nver.am
+
+ftp.nver.am - host-name
+nveram	- user
+#$Ah0545139 - password
+
+--------------------------------------------------
+php-pdo
+-
+v   php-pdo-dblib  
+-
+v   php-pdo-firebird 
+-
+v   php-pdo-mysql 
+-
+v   php-pdo-odbc 
+-
+v   php-pdo-pgsql    
+-
+v   php-pdo-sqlite
+
+
+-v   php7.0-pdo
+-
+v   php7.0-pdo-dblib
+-
+v   php7.0-pdo-firebird
+-
+v   php7.0-pdo-mysql
+-
+v   php7.0-pdo-odbc
+-
+v   php7.0-pdo-pgsql
+-
+v   php7.0-pdo-sqlite
+
+
+
+php-mysql 
+php-mysqli  
+php-mysqlnd     
+php-pdo-mysql
+
+
+A mysql-server-5.7      
+A mysql-server-core-5.7
+
+http://unocoding.com/android_test/register.php?name=charmen&last_name=barmen&email=charm@mail.ru&password=arm1234
+
+
+SELECT level,mark,task,points FROM user_progress WHERE unique_id ='5973544bb73015.17800673' AND course_name='html'

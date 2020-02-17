@@ -1,0 +1,171 @@
+
+Unix command <--> Windows command
+
+https://skimfeed.com/blog/windows-command-prompt-ls-equivalent-dir/
+=========================================
+socket.IO - node.js ...
+
+socket.emit
+socket.send
+socket.on	- socket.on(eventName, callback) [listen emit-events by "na-me"]
+
+flags
+socket.broadcast.emit('an event',{ some: 'data' })
+broadcast - Բոլորին, բացի ինձանից։
+
+// կոնկրետ ID-ով օգտատիրոջ համար հաղորդագրություն
+socket.broadcast.to('ID').emit('send msg', {somedata : somedata_server});
+
+socket.volatile.emit('an event', {some: 'data'})
+volatile - the event data may be lost if the client is not ready to receive messages
+
+binary - boolean [նկարների (медиа типъ даннъх) համար]
+socket.binary(true).emit('an event', { some: 'data' });
+
+
+===============================
+phpsocket.io 
+"A server side alternative implementation of socket.io
+in PHP based on Workerman package."
+https://github.com/walkor/phpsocket.io
+https://packagist.org/packages/workerman/workerman
+
+$ composer require workerman/phpsocket.io
+
+check port is not bussy (cmd)
+$ netstat -a
+
+don't forget require_once __DIR__ . '/vendor/autoload.php';
+
+each user has
+userId
+connectId
+nickName
+bet
+
+1) open login page
+on.connect - send "connectId" by emit('connect confirm', connectId);
+
+2) when login
+emit(add user) - send userId, nickName, bet.
+[
+connectId:{
+userId: "dededed879798de",
+nickName: "someName",
+bet: 1,
+}
+]
+
+
+=========================workerman=============================
+
+check environment for workerman by curl command (all must to be [OK])
+$ curl -Ss http://www.workerman.net/check.php | php
+PHP Version >= 5.3.3                  [OK] 
+Extension pcntl check                 [OK] 
+Extension posix check                 [OK]
+
+If it is not all ok, refer to the following document to install the missing extension
+we have OK for all!!
+
+
+transfer by winSCP
+use user credentials for upload
+IP: 194.135.81.127
+
+FTP-connection
+User: ftpman
+pass: 7DllneAhCoVE
+
+SSH-connection
+User: root
+Pass: 7DllneAhCoVE
+
+unzip by command
+right+Click->File Custom Commnds...->Enter (will open text filed)
+type this command and push enter.
+unzip -o myarchive.zip
+https://www.techwalla.com/articles/how-to-unzip-a-file-in-winscp
+
+
+
+
+==============================Create Linux Service ==============
+RUN ON SERVER (Linux)
+start automatically on Linux
+http://doc.workerman.net/faq/start-with-system.html
+
+Use systemd and shell to manage workerman
+https://pdf.us/2018/08/25/1762.html		(translate from china and read ))))
+***if you want to use shell, instead of cron-job add shell into pm2 process manager for Node.js
+https://stackoverflow.com/questions/2036654/run-php-script-as-daemon-process
+*** etc/systemd/system/ instead of usr/bin/systemd .....
+
+
+we can do it by Upstart too... /etc/init
+http://upstart.ubuntu.com/
+https://www.wikitechy.com/tutorials/linux/run-php-script-as-daemon-process
+
+
+
+systemd - creating workerman.service
+etc/systemd/system/workerman.service
+[***********************************
+was mixed 
+first link: https://pdf.us/2018/08/25/1762.html
+second link: https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+third link: https://secretdeveloper.co.uk/post/using-systemd-run-php-system-service
+***********************************]
+
+create new file (workerman.service)and write code below
+
+[Unit]
+Description=Workerman Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+User=root
+ExecStart=/usr/bin/php /var/www/phpwsockets/index.php start
+ExecReload =/usr/bin/php /data/www/socket/index.php restart
+ExecStop =/usr/bin/php /data/www/socket/index.php stop
+
+[Install]
+WantedBy=multi-user.target
+
+save, close
+run this 2 commands
+(Reload the systemctl daemon:)
+1)$ sudo systemctl daemon-reload
+
+(And finally start the service:)
+2)$ sudo systemctl start workerman.service
+
+For Managing the Service
+sudo systemctl status workerman.service
+sudo systemctl stop workerman.service
+sudo systemctl restart workerman.service
+
+Running on Startup (enabled, but always we can check it!)
+(run on startup)
+sudo systemctl enable phpservice.service
+(check is enabled - will run on startup)
+sudo systemctl is-enabled phpservice.service
+(disable run on startup)
+sudo systemctl disable phpservice.service
+
+===============================
+
+Terminal commands
+got to -> var/www/phpwsockets/
+and run Available commands
+php index.php start 
+php index.php status
+php index.php connections
+php index.php stop 
+php index.php restart 
+php index.php reload
+

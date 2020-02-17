@@ -1,0 +1,30 @@
+2020-01-22 23:39:13 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function to() on null in C:\ospanel\OSPanel\domains\phpwsockets\index.php:13
+Stack trace:
+#0 [internal function]: {closure}(Object(PHPSocketIO\Socket))
+#1 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Event\Emitter.php(93): call_user_func_array(Object(Closure), Array)
+#2 [internal function]: PHPSocketIO\Event\Emitter->emit('connection', Object(PHPSocketIO\Socket))
+#3 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Nsp.php(102): call_user_func_array(Array, Array)
+#4 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Nsp.php(68): PHPSocketIO\Nsp->emit('connection', Object(PHPSocketIO\Socket))
+#5 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Client.php(64): PHPSocketIO\Nsp->add(Object(PHPSocketIO\Client), Object(PHPSocketIO\Nsp), Array)
+#6 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\SocketIO.php(130): PHPSocketIO\Client->connect('/')
+#7 [internal funct in C:\ospanel\OSPanel\domains\phpwsockets\index.php on line 13"
+2020-01-22 23:39:42 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function emit() on null in C:\ospanel\OSPanel\domains\phpwsockets\index.php:13
+Stack trace:
+#0 [internal function]: {closure}(Object(PHPSocketIO\Socket))
+#1 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Event\Emitter.php(93): call_user_func_array(Object(Closure), Array)
+#2 [internal function]: PHPSocketIO\Event\Emitter->emit('connection', Object(PHPSocketIO\Socket))
+#3 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Nsp.php(102): call_user_func_array(Array, Array)
+#4 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Nsp.php(68): PHPSocketIO\Nsp->emit('connection', Object(PHPSocketIO\Socket))
+#5 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Client.php(64): PHPSocketIO\Nsp->add(Object(PHPSocketIO\Client), Object(PHPSocketIO\Nsp), Array)
+#6 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\SocketIO.php(130): PHPSocketIO\Client->connect('/')
+#7 [internal fun in C:\ospanel\OSPanel\domains\phpwsockets\index.php on line 13"
+2020-01-22 23:51:55 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function emit() on null in C:\ospanel\OSPanel\domains\phpwsockets\index.php:13
+Stack trace:
+#0 [internal function]: {closure}(Object(PHPSocketIO\Socket))
+#1 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Event\Emitter.php(93): call_user_func_array(Object(Closure), Array)
+#2 [internal function]: PHPSocketIO\Event\Emitter->emit('connection', Object(PHPSocketIO\Socket))
+#3 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Nsp.php(102): call_user_func_array(Array, Array)
+#4 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Nsp.php(68): PHPSocketIO\Nsp->emit('connection', Object(PHPSocketIO\Socket))
+#5 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\Client.php(64): PHPSocketIO\Nsp->add(Object(PHPSocketIO\Client), Object(PHPSocketIO\Nsp), Array)
+#6 C:\ospanel\OSPanel\domains\phpwsockets\vendor\workerman\phpsocket.io\src\SocketIO.php(130): PHPSocketIO\Client->connect('/')
+#7 [internal fun in C:\ospanel\OSPanel\domains\phpwsockets\index.php on line 13"
